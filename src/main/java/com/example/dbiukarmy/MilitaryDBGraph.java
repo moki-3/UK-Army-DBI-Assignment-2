@@ -149,8 +149,9 @@ public class MilitaryDBGraph extends Application {
         reload.setStyle("-fx-background-color:#F2CA44;-fx-text-fill:white;"
                 + "-fx-font-size:14;-fx-padding:10 20;");
         reload.setOnAction(e -> {
-            primaryStage.close();
-            start(new Stage());
+            List<RankData> updatedRanks = loadRanksFromDatabase();
+            buildOrgChart(updatedRanks);
+            adjustStageSize(primaryStage);
         });
 
         Button newConn = new Button("Neue Verbindung");
@@ -169,6 +170,7 @@ public class MilitaryDBGraph extends Application {
 
         /* Daten laden und Diagramm bauen */
         loadDataAndCreateChart();
+        adjustStageSize(primaryStage);
 
         Scene scene = new Scene(root, 1000, 700);
         primaryStage.setTitle("Militär‑Organigramm");
@@ -331,6 +333,44 @@ public class MilitaryDBGraph extends Application {
 
         orgChartPane.getChildren().add(node.visualNode);
     }
+
+    private double padding = 40;
+
+    private void adjustStageSize(Stage stage) {
+        double minX = Double.MAX_VALUE;
+        double minY = Double.MAX_VALUE;
+        double maxX = Double.MIN_VALUE;
+        double maxY = Double.MIN_VALUE;
+
+        for (RankNode node : rankNodeMap.values()) {
+            double left = node.x - 75;
+            double right = node.x + 75;
+            double top = node.y - 30;
+            double bottom = node.y + 40;
+
+            if (left < minX) minX = left;
+            if (right > maxX) maxX = right;
+            if (top < minY) minY = top;
+            if (bottom > maxY) maxY = bottom;
+        }
+
+        double padding = 40;
+        double width = maxX - minX + 2 * padding;
+        double height = maxY - minY + 2 * padding;
+
+        width = Math.max(width, 1000);
+        height = Math.max(height, 700);
+
+        orgChartPane.setMinSize(width, height);
+        orgChartPane.setPrefSize(width, height);
+
+        // Nur sizeToScene aufrufen, ohne Scene neu zu setzen
+        stage.sizeToScene();
+    }
+
+
+
+
 
     /* ---------- Export‑Funktionen ---------- */
     private void saveAsPNG(Stage stage) {
