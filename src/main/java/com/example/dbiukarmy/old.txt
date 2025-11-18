@@ -236,76 +236,53 @@ public class MilitaryDBGraph extends Application {
 
     /* ---------- Organigramm‑Logik ---------- */
     private void buildOrgChart(List<RankData> ranks) {
-
-        // 1. Knoten erzeugen
-        rankNodeMap.clear();
+        /* 1. Knoten erzeugen */
         for (RankData rd : ranks) {
             rankNodeMap.put(rd.rankId, new RankNode(rd));
         }
 
-        // 2. Hierarchie aufbauen
-        List<RankNode> roots = new ArrayList<>();
-
+        /* 2. Hierarchie aufbauen */
+        RankNode root = null;
         for (RankData rd : ranks) {
             RankNode node = rankNodeMap.get(rd.rankId);
-
             if (rd.supervisorId == null) {
-                // mehrere Roots unterstützen
-                roots.add(node);
+                root = node;                 // oberster Rang
             } else {
                 RankNode sup = rankNodeMap.get(rd.supervisorId);
                 if (sup != null) {
                     sup.subordinates.add(node);
-                } else {
-                    // Supervisor existiert nicht – verwaiste Knoten → ebenfalls Root
-                    roots.add(node);
                 }
             }
         }
 
-        // Wenn wirklich GAR kein Root existiert → alle als Root interpretieren
-        if (roots.isEmpty()) {
-            roots.addAll(rankNodeMap.values());
-        }
-
-        // 3. Layout für mehrere Roots nebeneinander
-        double x = 300;  // Startpunkt
-        double spacingBetweenTrees = 500;
-
-        for (RankNode r : roots) {
-            calculatePositions(r, x, 60, 450);
-            x += spacingBetweenTrees;
-        }
-
-        // 4. Visualisierung
-        orgChartPane.getChildren().clear();
-        for (RankNode r : roots) {
-            drawNode(r);
+        if (root != null) {
+            /* 3. Layout‑Berechnung */
+            calculatePositions(root, 600, 50, 500);
+            /* 4. Visualisierung */
+            drawChart(root);
         }
     }
 
-
-    private double calculatePositions(RankNode node, double x, double y, double hSpacing) {
+    private double calculatePositions(RankNode node,
+                                      double   x, double y, double hSpacing) {
         node.x = x;
         node.y = y;
 
         if (node.subordinates.isEmpty()) {
-            return x;
+            return x;                       // Blatt
         }
 
-        double nextY = y + 150;
+        double nextY      = y + 120;
         double totalWidth = hSpacing * (node.subordinates.size() - 1);
-        double startX = x - totalWidth / 2;
+        double startX     = x - totalWidth / 2;
 
-        for (int i = 0; i < node.subordinates.size(); i++) {
+        for (int i=0; i<node.subordinates.size(); i++) {
             RankNode child = node.subordinates.get(i);
-            double childX = startX + i * hSpacing;
-            calculatePositions(child, childX, nextY, hSpacing * 0.8);
+            double childX  = startX + i * hSpacing;
+            calculatePositions(child, childX, nextY, hSpacing*0.8);
         }
-
         return x;
     }
-
 
     private void drawChart(RankNode root) {
         orgChartPane.getChildren().clear();

@@ -23,6 +23,10 @@ public class MilitaryOrgChartLauncher extends Application {
         TextField dbField = new TextField();
         dbField.setPromptText("z. B. ukarmy");
 
+        Label portLabel = new Label("Portt:");
+        TextField portfeld = new TextField();
+        portfeld.setPromptText("z. B. 5432");
+
         Button connectButton = new Button("Verbinden");
         connectButton.setDefaultButton(true);
         Label statusLabel = new Label();
@@ -31,6 +35,7 @@ public class MilitaryOrgChartLauncher extends Application {
             String user = userField.getText().trim();
             String pass = passField.getText();
             String db = dbField.getText().trim();
+            String port = portfeld.getText().trim();
 
             if (user.isEmpty() || pass.isEmpty() || db.isEmpty()) {
                 statusLabel.setText("Bitte alle Felder ausfüllen.");
@@ -38,7 +43,7 @@ public class MilitaryOrgChartLauncher extends Application {
             }
 
             // Statische Konfiguration in Hauptanwendung setzen
-            MilitaryDBGraph.setDatabaseConfig(user, pass, db);
+            MilitaryDBGraph.setDatabaseConfig(user, pass, db, port);
 
             try {
                 // Haupt-Szene im gleichen Fenster starten
@@ -51,7 +56,7 @@ public class MilitaryOrgChartLauncher extends Application {
             }
         });
 
-        VBox layout = new VBox(10, userLabel, userField, passLabel, passField, dbLabel, dbField, connectButton, statusLabel);
+        VBox layout = new VBox(10, userLabel, userField, passLabel, passField, dbLabel, dbField, portLabel, portfeld, connectButton, statusLabel);
         layout.setPadding(new Insets(20));
         layout.setAlignment(Pos.CENTER);
 
