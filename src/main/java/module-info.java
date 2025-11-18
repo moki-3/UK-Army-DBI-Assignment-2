@@ -10,6 +10,10 @@ module com.example.dbiukarmy {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.sql;
+    requires javafx.swing;
+    requires org.apache.xmlgraphics.batik.svggen;
+    requires org.apache.xmlgraphics.batik.dom;
 
     opens com.example.dbiukarmy to javafx.fxml;
     exports com.example.dbiukarmy;
