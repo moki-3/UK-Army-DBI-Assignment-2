@@ -360,10 +360,38 @@ public class MilitaryDBGraph extends Application {
 
         if (file != null) {
             try {
+                double minX = Double.MAX_VALUE;
+                double minY = Double.MAX_VALUE;
+                double maxX = Double.MIN_VALUE;
+                double maxY = Double.MIN_VALUE;
+
+                for (RankNode node : rankNodeMap.values()) {
+                    double left = node.x - 75;
+                    double right = node.x + 75;
+                    double top = node.y - 30;
+                    double bottom = node.y + 40; // Höhe Box + Abstand für Linien
+
+                    if (left < minX) minX = left;
+                    if (right > maxX) maxX = right;
+                    if (top < minY) minY = top;
+                    if (bottom > maxY) maxY = bottom;
+                }
+
+                double padding = 20;
+                minX -= padding;
+                minY -= padding;
+                maxX += padding;
+                maxY += padding;
+                double width = maxX - minX;
+                double height = maxY - minY;
+
                 StringBuilder sb = new StringBuilder();
                 sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
                 sb.append("<svg xmlns=\"http://www.w3.org/2000/svg\" ")
-                        .append("width=\"1200\" height=\"800\">\n");
+                        .append("width=\"").append(width).append("\" ")
+                        .append("height=\"").append(height).append("\" ")
+                        .append("viewBox=\"").append(minX).append(" ")
+                        .append(minY).append(" ").append(width).append(" ").append(height).append("\">\n");
                 sb.append("<rect width=\"100%\" height=\"100%\" fill=\"#ecf0f1\"/>\n");
 
                 generateSVGContent(sb);
@@ -379,6 +407,7 @@ public class MilitaryDBGraph extends Application {
             }
         }
     }
+
 
     private void generateSVGContent(StringBuilder sb) {
         for (RankNode node : rankNodeMap.values()) {
