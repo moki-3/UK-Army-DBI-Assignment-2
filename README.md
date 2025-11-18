@@ -51,4 +51,5 @@ newDB ist der Datenbankname und kann geänder werden
 <b>Hinweis</b><br>
 Die Standard‑Portnummer ist 5432. Falls Sie einen anderen Port nutzen, passen Sie die Konfiguration später an.
 
-## Nun kann DBI‑UK‑Army.app oder DBI-UK-Army.jar gestartet werden!
+### jar file ausführen
+/JAR-Files/DBI-UK-Army.jar ausführen
