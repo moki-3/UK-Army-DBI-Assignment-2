@@ -52,4 +52,9 @@ newDB ist der Datenbankname und kann geänder werden
 Die Standard‑Portnummer ist 5432. Falls Sie einen anderen Port nutzen, passen Sie die Konfiguration später an.
 
 ### jar file ausführen
-/JAR-Files/DBI-UK-Army.jar ausführen
+Das Projekt mit 
+
+```
+git clone https://github.com/moki-3/UK-Army-DBI-Assignment-2.git 
+```
+kopieren und dann /JAR-Files/DBI-UK-Army.jar ausführen
