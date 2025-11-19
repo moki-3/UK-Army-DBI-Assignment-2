@@ -5,7 +5,7 @@ DBI‑UK‑Army ist ein JavaFX‑Desktop‑Programm, das eine Verbindung zu eine
 Die .jar-file, die benutzt werden kann ist unter /JAR-Files
 
 ## Voraussetzungen
-
+* MacOS
 * Java 17 JDK (oder höher)
 * PostgreSQL 13+ (lokale Instanz, bereits installiert und konfiguriert)
 
