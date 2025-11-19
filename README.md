@@ -47,7 +47,12 @@ createdb -O username userdb
 username ist der Username und kann geändert werden
 userdb ist der Datenbankname und kann geänder werden
 
+### Tabellen erstellen
+SQL file von SQL Ordner runterlade
 
+```
+\i /pfad/zur/datei.sql
+```
 
 ### jar file ausführen
 die .jar von der releases runterladen und ausführen mit 
