@@ -41,11 +41,11 @@ brew services start postgresql@13
 ### Benutzer & Datenbank erstellen (falls nicht bereits vorhanden)
 ```
 sudo -u postgres createuser username --pwprompt
-createdb -O username username
+createdb -O username userdb
 ```
 <b>Hinweis</b><br>
 username ist der Username und kann geändert werden
-username ist der Datenbankname und kann geänder werden
+userdb ist der Datenbankname und kann geänder werden
 
 
 
