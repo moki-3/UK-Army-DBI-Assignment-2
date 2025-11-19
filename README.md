@@ -6,7 +6,6 @@ Die .jar-file, die benutzt werden kann ist unter /JAR-Files
 
 ## Voraussetzungen
 
-* macOS 10.13+ (High Sierra oder neuer)
 * Java 17 JDK (oder höher)
 * PostgreSQL 13+ (lokale Instanz, bereits installiert und konfiguriert)
 
@@ -41,20 +40,19 @@ brew services start postgresql@13
 
 ### Benutzer & Datenbank erstellen (falls nicht bereits vorhanden)
 ```
-sudo -u postgres createuser newUser --pwprompt
-createdb -O newUSer newDB
+sudo -u postgres createuser username --pwprompt
+createdb -O username userdb
 ```
 <b>Hinweis</b><br>
-newUser ist der Username und kann geändert werden
-newDB ist der Datenbankname und kann geänder werden
+username ist der Username und kann geändert werden
+userdb ist der Datenbankname und kann geänder werden
 
-<b>Hinweis</b><br>
-Die Standard‑Portnummer ist 5432. Falls Sie einen anderen Port nutzen, passen Sie die Konfiguration später an.
+
 
 ### jar file ausführen
-Das Projekt mit 
+die .jar von der releases runterladen und ausführen mit 
 
 ```
-git clone https://github.com/moki-3/UK-Army-DBI-Assignment-2.git 
+cd Pfad/zur/jar/file
+java -jar DBI-UK-Army.jar
 ```
-kopieren und dann /JAR-Files/DBI-UK-Army.jar ausführen
