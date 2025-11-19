@@ -302,35 +302,39 @@ public class MilitaryDBGraph extends Application {
 
 
 
-        double nextY = y + 150;
+        double nextY = y + 300;
 
 
         double totalWidth = hSpacing * (node.subordinates.size() - 1);
 
         double startX = x - totalWidth / 2;
 
-        int number = 3;
+        int number = 1;
         for (int i = 0; i < node.subordinates.size(); i++) {
             RankNode child = node.subordinates.get(i);
 
-            double childX;
-            if(lastSupervisorId == node.data.supervisorId && node.data.supervisorId != null) {
-                childX = startX + i * hSpacing + (100 * number);
+            double childX = startX + i * hSpacing;
+
+
+            double newHSpacing;
+            if(lastSupervisorId == node.data.supervisorId) {
+                if(number > 1){
+                    newHSpacing = -1900 - (number * 100);
+                }else {
+                    //newHSpacing = -800 * (number * number);
+                    newHSpacing = -1800;
+                }
             }else{
-                childX = startX + i * hSpacing;
+                newHSpacing = hSpacing * 0.8;
             }
-
-
-
-
-            calculatePositions(child, childX, nextY, hSpacing * 0.8);
+            number++;
+            lastSupervisorId = node.data.supervisorId;
+            calculatePositions(child, childX, nextY, newHSpacing);
         }
 
-        lastSupervisorId = node.data.supervisorId;
+
         return x;
     }
-
-
 
 
 
