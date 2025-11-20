@@ -51,13 +51,13 @@ userdb ist der Datenbankname und kann geänder werden
 SQL file von SQL Ordner runterlade
 
 ```
-\i /pfad/zur/datei.sql
+\i /pfad/zu/schema.sql
 ```
 
 ### jar file ausführen
 die .jar von der releases runterladen und ausführen mit 
 
 ```
-cd Pfad/zur/jar/file
+cd Pfad/zu/DBI-UK-Army.jar
 java -jar DBI-UK-Army.jar
 ```
