@@ -55,9 +55,17 @@ SQL file von SQL Ordner runterlade
 ```
 
 ### jar file ausführen
+### Es gibt zwei arten, die Jar file auszuführen
+
+1. CLI
+
 die .jar von der releases runterladen und ausführen mit 
 
 ```
 cd Pfad/zu/DBI-UK-Army.jar
 java -jar DBI-UK-Army.jar
 ```
+
+2. mit GUI
+
+
