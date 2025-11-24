@@ -48,7 +48,7 @@ username ist der Username und kann geändert werden
 userdb ist der Datenbankname und kann geänder werden
 
 ### Tabellen erstellen
-SQL file von SQL Ordner runterlade
+SQL file von SQL Ordner runterladen
 
 ```
 \i /pfad/zu/schema.sql
@@ -57,7 +57,7 @@ SQL file von SQL Ordner runterlade
 ### jar file ausführen
 ### Es gibt zwei arten, die Jar file auszuführen
 
-1. CLI
+1. CLI (schneller, empfholen)
 
   die .jar von der releases runterladen und ausführen mit 
 
