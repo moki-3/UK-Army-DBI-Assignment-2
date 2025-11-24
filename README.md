@@ -68,4 +68,17 @@ SQL file von SQL Ordner runterlade
 
 2. GUI
 
+Wenn man im Finder auf DBI-UK-Army.jar doppelklickt, kommt folgendes Pop-Up:
+
+<img width="372" height="362" alt="Screenshot 2025-11-24 at 3 58 44 pm" src="https://github.com/user-attachments/assets/6c2f0dd7-8066-4b64-89cc-7704f0c2b878" />
+
+Um das zu Umgehen, muss man die Systemeinstellungen öffnen und unter Privacy & Security runterscrollen, bis man folgendes sieht:
+
+<img width="835" height="806" alt="Screenshot 2025-11-24 at 4 02 02 pm" src="https://github.com/user-attachments/assets/9d57bf49-e580-4048-adf7-091a2b702e28" />
+
+Hier clickt man dann "Open Anyway". Dann kommt folgendes Fenster:
+
+<img width="328" height="418" alt="Screenshot 2025-11-24 at 4 04 42 pm 1" src="https://github.com/user-attachments/assets/9fe1cf53-9721-4309-97bf-8d3d10213b68" />
+
+Da clickt man dann "Open Anyway", dann gibt man das Password ein oder scannt den Fingerabdruck und nun kann man die .jar File öffnen
 
