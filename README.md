@@ -57,7 +57,7 @@ SQL file von SQL Ordner runterladen
 ### jar file ausführen
 ### Es gibt zwei arten, die Jar file auszuführen
 
-1. CLI (schneller, empfholen)
+1. CLI (schneller, empfohlen)
 
   die .jar von der releases runterladen und ausführen mit 
 
