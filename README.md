@@ -55,13 +55,13 @@ Falls nicht installiert, so installieren:
 ```
 brew install postgresql@13   # oder neuere Version
 ```
-
-### Service starten
+---
+## Service starten
 ```
 brew services start postgresql@13
 ```
-
-### Benutzer & Datenbank erstellen (falls nicht bereits vorhanden)
+---
+## Benutzer & Datenbank erstellen (falls nicht bereits vorhanden)
 ```
 sudo -u postgres createuser username --pwprompt
 createdb -O username userdb
