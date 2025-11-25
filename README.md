@@ -1,7 +1,7 @@
 # DBI‑UK‑Army.app – Installations‑ und Benutzerdokumentation (macOS)
 ## Kurzbeschreibung
 
-DBI‑UK‑Army ist ein JavaFX‑Desktop‑Programm, das eine Verbindung zu einer lokalen PostgreSQL‑Datenbank herstellt. Beim Start erscheint ein Login‑Fenster, in dem Sie Benutzername, Passwort und den gewünschten Tabellen‑Name eingeben. Nach dem Klicken auf Weiter wird ein zweites Fenster geöffnet, in dem alle Daten aus der angegebenen Tabelle angezeigt werden.
+DBI‑UK‑Army ist ein JavaFX‑Desktop‑Programm, das eine Verbindung zu einer lokalen PostgreSQL‑Datenbank herstellt. Beim Start erscheint ein Login‑Fenster, in dem Sie Benutzername, Passwort, den gewünschten Tabellen‑Name eingeben und den Port. Nach dem Klicken auf Weiter wird ein zweites Fenster geöffnet, in dem alle Daten aus der angegebenen Tabelle angezeigt werden.
 Die .jar-file, die benutzt werden kann, ist unter releases.
 
 ## Voraussetzungen
