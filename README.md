@@ -8,6 +8,7 @@ Die .jar-file, die benutzt werden kann, ist unter releases.
 * MacOS
 * Java 17 JDK (oder höher)
 * PostgreSQL 13+ (lokale Instanz, bereits installiert und konfiguriert)
+* Homebrew (zum installieren, fallss Java oder PostgreSQL nicht richtig installiert sind)
 
 Beim ersten Start von Apps, die nicht aus dem App‑Store stammen, kann macOS blockieren. Rechtsklick → Öffnen und bestätigen. Es kann auch die .jar file benutzt werden
 
