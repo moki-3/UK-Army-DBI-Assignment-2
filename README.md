@@ -67,8 +67,8 @@ sudo -u postgres createuser username --pwprompt
 createdb -O username userdb
 ```
 <b>Hinweis</b><br>
-username ist der Username und kann geändert werden
-userdb ist der Datenbankname und kann geänder werden
+* username ist der Username und kann geändert werden
+* userdb ist der Datenbankname und kann geänder werden
 
 ### Tabellen erstellen
 SQL file von SQL Ordner runterladen
