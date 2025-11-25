@@ -12,9 +12,24 @@ Die .jar-file, die benutzt werden kann, ist unter releases.
 
 Beim ersten Start von Apps, die nicht aus dem App‑Store stammen, kann macOS blockieren. Rechtsklick → Öffnen und bestätigen. Es kann auch die .jar file benutzt werden
 
+## Homebrew installieren, falls nicht installiert:
+
+[Homebrew](https://brew.sh/)
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+
 ## Voraussetzungen prüfen
 Java installieren (falls noch nicht vorhanden)
-#### Homebrew → Java 17 JDK
+
+### Überprüfen, ob Java installiert ist
+```
+java --version
+```
+
+Falls nicht installiert, so installieren:
 ```
 brew install openjdk@17
 ``` 
@@ -29,7 +44,14 @@ source ~/.zshrc
 ```
 java -version   # Ausgabe: openjdk 17.x.x …
 ```
-### PostgreSQL installieren (falls noch nicht vorhanden)
+
+### Überprüfen, ob PostgreSQL installiert ist
+
+```
+psql --version
+```
+Falls nicht installiert, so installieren:
+
 ```
 brew install postgresql@13   # oder neuere Version
 ```
